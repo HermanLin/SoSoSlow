@@ -5,7 +5,7 @@ HW15 -- So So Quick
 
 /*****************************************************
  * class QuickSort
- * (skeleton) <<delete this line if untrue>>
+ *
  * Implements quicksort algo to sort an array of ints in place
  *
  * 1. Summary of QuickSort algorithm:
@@ -116,7 +116,7 @@ public class QuickSort {
 		swap(storVal, right, arr);
 		return storVal;
   }
-
+    /*
   //main method for testing
   public static void main( String[] args ) {
 
@@ -144,8 +144,6 @@ public class QuickSort {
 		qsort( arrN );
 		System.out.println("arrN after sort: " );
 		printArr(arrN);
-		/*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
-		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 	
 
@@ -175,9 +173,7 @@ public class QuickSort {
 		qsort( arrMatey );
 		System.out.println("arrMatey after sort: " );
 		printArr(arrMatey);
-		/*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y) 
-		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
   }//end main
+*/
 
 }//end class QuickSort
