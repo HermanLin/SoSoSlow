@@ -133,7 +133,7 @@ public class QuickSortTester {
 	double bestStartTime = 0;
 	double bestEndTime = 0;
 	double bestTime = 0;
-	double summation = 0;
+	double bestSummation = 0;
 	for (int x = 0; x < 10; x ++) {
 	    bestStartTime = System.nanoTime();
 	    qsort(arrayOne);
@@ -151,7 +151,7 @@ public class QuickSortTester {
 	double worstStartTime = 0;
 	double worstEndTime = 0;
 	double worstTime = 0;
-	double summation = 0;
+	double worstSummation = 0;
 	for (int x = 0; x < 10; x ++) {
 	    worstStartTime = System.nanoTime();
 	    qsortWC(arrayOne, maxPos);
