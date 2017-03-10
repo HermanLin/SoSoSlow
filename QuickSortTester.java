@@ -1,4 +1,28 @@
+//Team SoSoSlow -- Herman Lin, Elaina Chung, Lisa Eng
+//APCS2 pd3
+//LAB01 -- What Does the Data Say?
+//2017-03-09
 
+/*
+
+PIVOT SELECTION AFFECT EXECUTION TIME
+Create an array (arrayOne) that partitions with different pivots.
+
+BEST CASE PIVOT: median of the array
+WORST CASE PIVOT: smallest/largest value of the array
+AVERAGE CASE PIVOT: val at the middle index of arary
+
+After each run, using System.nanoTime() to time start and end time to find runtime
+
+DATA ARRANGEMENT AFFECT EXECUTION TIME
+
+Using the average case pivot to partition, we will find execution time for the following arrays:
+
+SHUFFLE
+SORTED
+
+After each run, using System.nanoTime() to time start and end time to find runtime
+ */
 
 public class QuickSortTester {
 
