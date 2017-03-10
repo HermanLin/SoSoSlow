@@ -5,24 +5,24 @@
 
 /*
 
-PIVOT SELECTION AFFECT EXECUTION TIME
-Create an array (arrayOne) that partitions with different pivots.
+  PIVOT SELECTION AFFECT EXECUTION TIME
+  Create an array (arrayOne) that partitions with different pivots.
 
-BEST CASE PIVOT: median of the array
-WORST CASE PIVOT: smallest/largest value of the array
-AVERAGE CASE PIVOT: val at the middle index of arary
+  BEST CASE PIVOT: median of the array
+  WORST CASE PIVOT: smallest/largest value of the array
+  AVERAGE CASE PIVOT: val at the middle index of arary
 
-After each run, using System.nanoTime() to time start and end time to find runtime
+  After each run, using System.nanoTime() to time start and end time to find runtime
 
-DATA ARRANGEMENT AFFECT EXECUTION TIME
+  DATA ARRANGEMENT AFFECT EXECUTION TIME
 
-Using the average case pivot to partition, we will find execution time for the following arrays:
+  Using the average case pivot to partition, we will find execution time for the following arrays:
 
-SHUFFLE
+  SHUFFLE
 
 
-After each run, using System.nanoTime() to time start and end time to find runtime
- */
+  After each run, using System.nanoTime() to time start and end time to find runtime
+*/
 
 public class QuickSortTester {
 
@@ -81,7 +81,7 @@ public class QuickSortTester {
     //==================================================
     //TEST PIVOT WORST CASE
 	
-   public static int findMinPos (int[] a){
+    public static int findMinPos (int[] a){
 	int min = a[0];
 	int minPos = 0;
 	for (int x = 0; x < a.length; x+=1){
@@ -164,6 +164,52 @@ public class QuickSortTester {
 	    worstSummation += worstTime;
 	}
 	System.out.println("\nAverage Time: " + worstSummation/10 + " nanoseconds");
+
+	//=-=-=-=-=-=AVERAGE CASE TESTING=-=-=-=-=-=
+	System.out.println("Checking case for:");
+	printArr(arrayTwo);
+
+	double avgStartTime = 0;
+	double avgEndTime = 0;
+	double avgTime = 0;
+	double avgSummation = 0;
+
+	for (int x = 40; x < 60; x ++) {
+	    for (int y = 0; y < 5; y ++) {
+		avgStartTime = System.nanoTime();
+		qsortWC(arrayTwo, x);
+		avgEndTime = System.nanoTime();
+		avgTime = avgEndTime - avgStartTime;
+		//System.out.println("Test " + y + ": " + avgTime + " nanoseconds");
+		avgSummation += avgTime;
+	    }
+	    System.out.println("Average Time for index " + x + ": " + avgSummation/5 + " nanoseconds");
+	    avgSummation = 0;
+	}
+
+	shuffle(arrayTwo);
+	System.out.println("\nChecking case for:");
+	printArr(arrayTwo);
+
+	double avgShuffleST = 0;
+	double avgShuffleET = 0;
+	double avgShuffleT = 0;
+	double avgShuffleS = 0;
+
+	for (int x = 40; x < 60; x ++) {
+	    for (int y = 0; y < 5; y ++) {
+		avgShuffleST = System.nanoTime();
+		qsortWC(arrayTwo, x);
+		avgShuffleET = System.nanoTime();
+		avgShuffleT = avgShuffleET - avgShuffleST;
+		//System.out.println("Test " + y + ": " + avgShuffleT + " nanoseconds");
+		avgShuffleS += avgShuffleT;
+	    }
+	    System.out.println("Average Time for index " + x + ": " + avgShuffleS/5 + " nanoseconds");
+	    avgShuffleS = 0;
+	}
+	/*=====================================================================
+	  =====================================================================*/
     }
 }
 	      
