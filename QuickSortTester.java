@@ -140,11 +140,14 @@ public class QuickSortTester {
 	    bestEndTime = System.nanoTime();
 	    bestTime = (bestEndTime - bestStartTime);
 	    System.out.println("Test " + x + ": " + bestTime + " nanoseconds");
-	    summation += bestTime;
+	    bestSummation += bestTime;
 	}
-	System.out.println("\nAverage Time: " + summation/10 + " nanoseconds");
+	System.out.println("\nAverage Time: " + bestSummation/10 + " nanoseconds");
 	    
-	//WORST CASE    
+	//WORST CASE
+	System.out.println("Checking case for:");
+	printArr(arrayOne);
+	
 	int minPos = findMinPos(arrayOne);
 	int maxPos = findMaxPos(arrayOne);
 	    
@@ -158,12 +161,10 @@ public class QuickSortTester {
 	    worstEndTime = System.nanoTime();
 	    worstTime = (worstEndTime - worstStartTime);
 	    System.out.println("Test " + x + ": " + worstTime + " nanoseconds");
-	    summation += worstTime;
+	    worstSummation += worstTime;
 	}
-	System.out.println("\nAverage Time: " + summation/10 + " nanoseconds");
+	System.out.println("\nAverage Time: " + worstSummation/10 + " nanoseconds");
     }
-    }
-
 }
 	      
 
