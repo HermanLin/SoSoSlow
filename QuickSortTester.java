@@ -51,7 +51,7 @@ public class QuickSortTester {
     }
 
     //================================================
-    
+    // TEST PIVOT BEST CASE
     public static void qsort( int[] d ) {
 	quicksort (d, 0, d.length - 1);
     }
@@ -78,19 +78,57 @@ public class QuickSortTester {
 	swap(storVal, right, arr);
 	return storVal;
     }
+    //==================================================
+    //TEST PIVOT WORST CASE
+	
+   public static int findMinPos (int[] a){
+	int min = a[0];
+	int minPos = 0;
+	for (int x = 0; x < a.length; x+=1){
+	    if (a[x] < min){
+		min = a[x];
+		minPos = x;
+	    }
+	}
+	return minPos;
+    }
 
+    public static int findMaxPos (int[] a){
+	int max = a[0];
+	int maxPos = 0;
+	for (int x = 0; x < a.length; x+=1){
+	    if (a[x] > max){
+		max = a[x];
+		maxPos = x;
+	    }
+	}
+	return maxPos;
+    }
+    public static void qsortWC( int[] d, int minMaxPos ) {
+	quicksortWC (d, 0, d.length - 1, minMaxPos);
+    }
+    
+    public static void quicksortWC (int[] arr, int left, int right, int minMaxPos) {
+	if (left < right) {
+	    int pvtPos = partition(arr, left, right, minMaxPos);
+	    quicksortWC (arr, left, pvtPos - 1, minMaxPos);
+	    quicksortWC (arr, pvtPos + 1, right, minMaxPos);
+	}
+    }
+	
     public static void main (String[] args) {
 	
 	//best: pvtPos = median
 	//worst: pvtPos = biggest/smallest value
 	//average: pvtPos = middle element
 	
+	//BEST CASE
 	int[] arrayOne = {1, 2, 3, 4, 5};
 	//int[] arrayTwo = 
 	
 	System.out.println("Checking case for:");
 	printArr(arrayOne);
-	
+	    
 	double bestStartTime = 0;
 	double bestEndTime = 0;
 	double bestTime = 0;
@@ -104,6 +142,25 @@ public class QuickSortTester {
 	    summation += bestTime;
 	}
 	System.out.println("\nAverage Time: " + summation/10 + " nanoseconds");
+	    
+	//WORST CASE    
+	int minPos = findMinPos(arrayOne);
+	int maxPos = findMaxPos(arrayOne);
+	    
+	double worstStartTime = 0;
+	double worstEndTime = 0;
+	double worstTime = 0;
+	double summation = 0;
+	for (int x = 0; x < 10; x ++) {
+	    worstStartTime = System.nanoTime();
+	    qsortWC(arrayOne, maxPos);
+	    worstEndTime = System.nanoTime();
+	    worstTime = (worstEndTime - worstStartTime);
+	    System.out.println("Test " + x + ": " + worstTime + " nanoseconds");
+	    summation += worstTime;
+	}
+	System.out.println("\nAverage Time: " + summation/10 + " nanoseconds");
+    }
     }
 
 }
