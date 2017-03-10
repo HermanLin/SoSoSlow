@@ -19,7 +19,7 @@ DATA ARRANGEMENT AFFECT EXECUTION TIME
 Using the average case pivot to partition, we will find execution time for the following arrays:
 
 SHUFFLE
-SORTED
+
 
 After each run, using System.nanoTime() to time start and end time to find runtime
  */
@@ -124,7 +124,8 @@ public class QuickSortTester {
 	
 	//BEST CASE
 	int[] arrayOne = {1, 2, 3, 4, 5};
-	//int[] arrayTwo = 
+	int[] arrayTwo = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	int[] arrayThree = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
 	
 	System.out.println("Checking case for:");
 	printArr(arrayOne);
